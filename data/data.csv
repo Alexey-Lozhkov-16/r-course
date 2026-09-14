@@ -1,0 +1,125 @@
+---
+title: Анализ данных
+format:
+  html:
+    embed-resources: true
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(flextable)
+library(gtsummary)
+```
+
+Это пример клинического исследования с двумя дозами Xanomeline и группой Placebo.
+В папке `data` файл с данными для занятия `data.csv` и `lb.csv` с лабораторными результатами.
+
+Мы импортируем и проверим данные, посчитаем BMI и поработаем с лабораторными результаты, построим итоговую статистическую таблицу.
+
+![](./tidyverse-workflow.png)
+
+## Импорт и очистка
+
+Загрузим `data.csv`, посмотрим данные и выберем только нужные столбцы.
+
+```{r}
+# read_csv
+# select
+# USUBJID, AGE, SEX, ARM, APOE, HEIGHT, WEIGHT, B12, WBC, HB
+```
+
+Уберем Screen Failure.
+
+```{r}
+# filter
+```
+
+```{r}
+#| include: false
+
+# table
+# count
+```
+
+Преобразуемые данные.
+
+```{r}
+# mutate
+# factor
+```
+
+```{r}
+# arrange
+
+# mutate
+# str_replace, as.numeric
+```
+
+## Рассчет статистик
+
+Работаем с импортированными данными.
+
+Рассчитаем BMI = рост / вес^2
+
+```{r}
+# data, mutate
+```
+
+Посчитаем кол-во выше нормы.
+
+```{r}
+# mutate
+# if_else
+```
+
+```{r}
+# mutate
+# case_when
+```
+
+Посчитаем число участников, средний возраст и средний BMI по всей выборке и по группам.
+
+```{r}
+# summarise, n, mean
+```
+
+```{r}
+# group_by
+# summarise, n, mean
+```
+
+## Отчёт
+
+```{r}
+# round
+
+# flextable
+# autofit
+# set_header_labels
+```
+
+```{r}
+# tbl_summary
+```
+
+## Форматы и объединение данных
+
+Длинный формат
+
+```{r}
+# pivot_longer
+```
+
+Широкий формат
+
+```{r}
+# pivot_wider
+```
+
+## Соединяем данные вместе
+
+```{r}
+# left_join, by
+```
